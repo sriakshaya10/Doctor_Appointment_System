@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Priya Srinivasan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="femalegeneralcheckup.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Priya Srinivasan</span><br><br>
+      <span class="heading">Specialization:-</span>General Health Checkup<br><br>
+      <span class="heading">Experience:-</span>15+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS,MD(General Medicine),Christian Medical College,Vellore<br><br>
+      <span class="heading">Location:-</span><a href="https://www.mappls.com/place-christian+medical+college-vellore-ida+scudder+road-thottapalayam-vellore-tamil+nadu-632004-MHSKP3@zdata=MTIuOTI0NTg3Kzc5LjEzNDkyNSsxNytNSFNLUDMrK25yed" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span><span class="heading">Languages spoken:-</span> English, Telugu, Tamil, Hindi</span><br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr.Priya Srinivasan is a highly experienced general practitioner,specializing in comprehensive health checkups and preventative care.She has a reputation for her empathetic care and thorough approach in diagnosing and treating common health issues,as well as managing chronic conditions.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Recipient of the “Outstanding Contribution to General Medicine” award by the National Health Council in 2021.<br><br>
+        <span class="heading">Advanced Training:-</span>Trained in early detection and prevention of chronic diseases,managing hypertension,diabetes,and cardiovascular health.She focuses on promoting wellness through regular health screenings.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Dr. Srinivasan emphasizes the importance of regular health checkups and preventive care.Her approach is patient-focused,providing personalized health advice to ensure long-term wellness.<br><br>
+        <span class="heading">Research & Publications:-</span>Published research on the importance of early diagnosis in the management of chronic illnesses.Her work has been featured in multiple medical journals focused on preventive healthcare.<br><br>
+      </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

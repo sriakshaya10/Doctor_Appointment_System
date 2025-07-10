@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Karthik Varma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="malepsychiatry.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Karthik Varma</span><br><br>
+      <span class="heading">Specialization:-</span>Psychiatry<br><br>
+      <span class="heading">Experience:-</span>15+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS,MD (Psychiatry),NIMHANS,Bengaluru<br><br>
+      <span class="heading">Location:-</span><a href="https://www.google.com/maps/place/National+Institute+Of+Mental+Health+%26+Neuro+Sciences+(NIMHANS)/@12.9407261,77.5934957,17z/data=!4m10!1m2!2m1!1sNIMHANS+Bangalore+location+in+map!3m6!1s0x3bae144b3ba64c37:0x90bd42af83a790f!8m2!3d12.9407261!4d77.5982593!15sCiFOSU1IQU5TIEJhbmdhbG9yZSBsb2NhdGlvbiBpbiBtYXAiA4gBAZIBDm1lZGljYWxfY2VudGVy4AEA!16s%2Fg%2F11bxc7ghs7?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span><span class="heading">Languages spoken:-</span> English, Telugu, kannada, Hindi</span><br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr.Karthik Varma is a compassionate psychiatrist with extensive experience in diagnosing and managing mental health conditions,including anxiety disorders,depression,schizophrenia,and PTSD.He is known for his empathetic and non-judgmental approach.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Honored by the Indian Psychiatric Society for excellence in mental health advocacy and patient care.<br><br>
+        <span class="heading">Advanced Training:-</span>Trained in Cognitive Behavioral Therapy (CBT),Dialectical Behavior Therapy (DBT),and trauma-informed care techniques.Skilled in both pharmacological and psychotherapeutic interventions.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Believes in destigmatizing mental health and providing holistic,personalized treatment plans tailored to each patient's emotional and psychological needs.<br><br>
+        <span class="heading">Research & Publications:-</span>Published several papers on adolescent mental health,stress-related disorders,and the integration of therapy and medication in treatment plans.<br><br>
+      </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

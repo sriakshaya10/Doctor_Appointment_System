@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>online consulation</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="online.css">
+    </head>
+    <body>
+        <h1 class="background">Most Qualified Doctor</h1>
+        <h3>Available Communication Languages: Telugu, Hindi, English</h3>
+       <div class="doctor-box">
+        <div class="doctor-container">
+            <img src="femalepsychiatry.png">
+            <span>Dr.Lakshmi Iyer</span>
+            <p>9+ Years Experience</p>
+            <div class="doctor-buttons">
+            <a href="lakshmipsychiatry.html">
+            <button>About Us</button>
+            </a>
+            <a href="bookfemale.html">
+            <button onclick="storeDoctorDetails('Dr.Lakshmi Iyer','Psychiatry')">Book Here</button>
+            </a>
+            <form action="ratingform.php" method="POST" onsubmit="return storeDoctorDetails('Dr.Lakshmi Iyer','Psychiatry')">
+                <button type="submit">Rating</button>
+            </form>
+            </div>
+        </div>
+       </div>
+       <div class="doctor-box1">
+        <div class="doctor-container">
+            <img src="malepsychiatry.png">
+            <span>Dr.Karthik Varma</span>
+            <p>15+ Years Experience</p>
+            <div class="doctor-buttons">
+            <a href="karthikpsychiatry.html">
+            <button>About Us</button>
+            </a>
+            <a href="bookmale.html">
+            <button onclick="storeDoctorDetails('Dr.Karthik Varma','Psychiatry')">Book Here</button>
+            </a>
+            <form action="ratingform.php" method="POST" onsubmit="return storeDoctorDetails('Dr.Karthik Varma','Psychiatry')">
+                <button type="submit">Rating</button>
+            </form>
+            </div>
+       </div>
+       </div>
+       <script>
+        function storeDoctorDetails(doctorName, specialization) {
+            localStorage.setItem('selectedDoctor', doctorName);
+            localStorage.setItem('selectedSpecialization', specialization);
+        }
+    </script>
+    </body>
+</html>

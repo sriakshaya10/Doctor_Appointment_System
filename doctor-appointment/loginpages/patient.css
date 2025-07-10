@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:#f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+.a {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 40px auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+}
+.a i {
+    font-size: 40px;
+    color: #007bff;
+}
+
+.a span {
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px;
+    display: inline-block;
+    margin-top: 5px;
+}
+.a .bi {
+    margin-right: 10px;
+}
+.icon, .icon2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: white;
+    font-size: 25px;
+}
+
+.icon {
+    background: #ff5733;
+}
+
+.icon2 {
+    background: #007bff;
+}
+.appointments {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 40px auto;
+    width: 80%;
+    
+}
+.b, .c {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 48%;
+}
+
+.b table, .c table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.b td, .c td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.b h2, .c h2 {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+}
+
+.b p, .c p {
+    color: #777;
+    text-align: center;
+}
+.container {
+    background-color: white;
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-size: 1.5em;
+    text-align: center;
+    color: #333;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td {
+    font-size: 14px;
+}
+a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.view-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
+
+.download-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}

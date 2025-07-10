@@ -1,0 +1,52 @@
+body {
+    font-family: "Times New Roman";
+    padding: 20px;
+    margin: 50px;
+    background-image: url("https://bytesflow.com/cdn-cgi/image/width=1200,height=475,fit=crop,quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/2018/06/Image-3.png");
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    color: black;
+    font-weight: bold;
+}
+
+.container {
+  background: #fff;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #218838;
+}

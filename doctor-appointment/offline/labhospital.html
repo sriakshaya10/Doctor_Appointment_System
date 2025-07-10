@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Test Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Lab Tests - (At Hospital)</h2>
+        <p>Click on a test to proceed with booking.</p>
+
+        <div class="grid" id="testGrid">
+            <div class="test-card" onclick="selectTest('Blood Test')">
+                <img src="https://www.manipaltrutest.com/images/pathology-sample-taking.png" alt="Blood Test">
+                <p>Blood Test</p>
+            </div>
+            <div class="test-card" onclick="selectTest('X-Ray')">
+                <img src="https://usa.united-imaging.com/-/media/usa/product/dr/udr_780i_e-09-patient-doctor_700x532.jpg" alt="X-Ray">
+                <p>X-Ray</p>
+            </div>
+            <div class="test-card" onclick="selectTest('MRI Scan')">
+                <img src="https://api.neohospital.com/uploads/Service/image-1718691221278-475456045-MRI.jpg" alt="MRI Scan">
+                <p>MRI Scan</p>
+            </div>
+            <div class="test-card" onclick="selectTest('CT Scan')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkWP4AEGiz-PdeMVye3KM81KOK99nt8nBDw&s" alt="CT Scan">
+                <p>CT Scan</p>
+            </div>
+            <div class="test-card" onclick="selectTest('ECG')">
+                <img src="https://media.istockphoto.com/id/1295615803/vector/tiny-doctors-examining-heart-health-flat-vector-illustration.jpg?s=612x612&w=0&k=20&c=lbgCsYF0hocLsxUP3qr7amT5LgRYFtTNbs4aBah_Bz0=" alt="ECG">
+                <p>ECG</p>
+            </div>
+        </div>
+
+        <div id="bookingForm">
+            <h3>Booking Details</h3>
+            <form action="book.php" method="POST">
+                <p id="selectedTestText"></p>
+                <input type="hidden" name="test_type" id="testTypeHidden">
+				<label>Patient Name: </label>
+                <input type="text" name="patient_name" placeholder="Patient Name" required><br>
+                <label>Hospital: </label>
+                <select name="hospital" required>
+                    <optgroup label="Visakhapatnam">
+                        <option value="RK Beach MultiCare Hospital">RK Beach MultiCare Hospital</option>
+                    </optgroup>
+                    <optgroup label="Eluru">
+                        <option value="Renu's Super Speciality Hospital">Renu's Super Speciality Hospital</option>
+                    </optgroup>
+                    <optgroup label="Vijayawada">
+                        <option value="Vyshu Multi Speciality Hospital">Vyshu Multi Speciality Hospital</option>
+                    </optgroup>
+                    <optgroup label="Nellore">
+                        <option value="Vandana Super Speciality Hospital">Vandana Super Speciality Hospital</option>
+                    </optgroup>
+                    <optgroup label="Hyderabad">
+                        <option value="Asritha Multi Speciality Hospital">Asritha Multi Speciality Hospital</option>
+                    </optgroup>
+                </select><br>
+                <label>Preferred Date: </label>
+                <input type="date" name="test_date" required><br>
+                <button class="btn" type="submit">Book Test</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

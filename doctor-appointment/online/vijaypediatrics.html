@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Vijay Reddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    } 
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="malepediatrics.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Vijay Reddy</span><br><br>
+      <span class="heading">Specialization:-</span>Pediatrics<br><br>
+      <span class="heading">Experience:-</span>13+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS, MD(Pediatrics), Kasturba Medical College,Manipal<br><br>
+      <span class="heading">Location:-</span><a href="https://www.collegebatch.com/7391-kasturba-medical-college-contact-number-address-map-manipal" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span><span class="heading">Languages spoken:-</span>English, Telugu, kannada,Hindi</span><br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr.Vijay Reddy is an experienced pediatrician committed to delivering comprehensive child healthcare. He focuses on both preventive and acute pediatric care,ensuring a child’s health journey is smooth and safe.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Recipient of the “Pediatric Excellence Award” by the Karnataka State Medical Association,2020.<br><br>
+        <span class="heading">Advanced Training:-</span>Completed advanced courses in pediatric allergy,neonatology,and child behavioral therapy in Singapore.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Dr.Reddy emphasizes building long-term trust with families,and his motto is: “Care with Compassion,Cure with Confidence.”<br><br>
+        <span class="heading">Research & Publications:-</span>Contributed to international journals on pediatric respiratory illnesses and newborn nutrition practices.<br><br>
+      </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

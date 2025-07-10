@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Shruti Nair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="femalepediatrics.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Shruti Nair</span><br><br>
+      <span class="heading">Specialization:-</span>Pediatrics<br><br>
+      <span class="heading">Experience:-</span>12+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS,MD(Pediatrics),JIPMER<br><br>
+      <span class="heading">Location:-</span><a href="https://jipmer.edu.in/about-us/location" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="https://www.linkedin.com/in/sultana-mehrosh-b17928339/" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span><span class="heading">Languages spoken:-</span> English, Telugu, Tamil, Hindi</span><br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr. Shruti Nair is a dedicated pediatrician with a focus on holistic child care from infancy through adolescence.She is known for her friendly approach that puts both children and parents at ease.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Awarded “Best Pediatrician - South India” by the Indian Medical Association in 2022.<br><br>
+        <span class="heading">Advanced Training:-</span>Specialized in pediatric nutrition,vaccinations,developmental milestones,and managing childhood infections.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Dr. Nair believes in proactive pediatric care and preventive medicine.Her motto: “Healthy Children, Happy Families.”<br><br>
+        <span class="heading">Research & Publications:-</span>Published several articles in Indian Pediatrics journal and conducted workshops on childhood immunization programs.<br><br>
+      </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Appointment Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Book an Appointment</h2>
+    <form action="patient.php" method="post" id="appointmentForm">
+      <label for="location">Location:</label>
+      <select id="location" name="location" required onchange="updateHospitals()">
+        <option value="">Select Location</option>
+        <option value="Vijayawada">Vijayawada</option>
+        <option value="Nellore">Nellore</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Eluru">Eluru</option>
+        <option value="Visakhapatnam">Visakhapatnam</option>
+      </select>
+
+      <label for="hospital">Hospital:</label>
+      <select id="hospital" name="hospital" required onchange="updateDepartments()">
+        <option value="">Select Hospital</option>
+      </select>
+
+      <label for="department">Department:</label>
+      <select id="department" name="department" required onchange="updateDoctors()">
+        <option value="">Select Department</option>
+      </select>
+
+      <label for="doctor">Doctor:</label>
+      <select id="doctor" name="doctor" required>
+        <option value="">Select Doctor</option>
+      </select>
+
+      <label for="slot">Slot:</label>
+      <select id="slot" name="slot" required>
+        <option value="">Select Slot</option>
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="2:00 PM">2:00 PM</option>
+        <option value="4:00 PM">4:00 PM</option>
+      </select>
+
+      <button type="submit">Next</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

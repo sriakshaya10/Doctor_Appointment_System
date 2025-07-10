@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Rajesh Nair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="malegeneralcheckup.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Rajesh Nair</span><br><br>
+      <span class="heading">Specialization:-</span>General Health Checkup<br><br>
+      <span class="heading">Experience:-</span>18+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS,MD(General Medicine),Madras Medical College<br><br>
+      <span class="heading">Location:-</span><a href="https://moovitapp.com/index/en/public_transit-Madras_Medical_College_and_Government_General_Hospital-Chennai-site_39730480-4612" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span><span class="heading">Languages spoken:-</span> English, Telugu, Tamil, Hindi</span><br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr. Rajesh Nair is a compassionate general physician specializing in health checkups, preventive care, and management of common ailments.He is known for his thorough approach in diagnosing and treating a wide range of medical conditions.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Awarded "Best General Practitioner" by the Tamil Nadu Medical Association in 2021.<br><br>
+        <span class="heading">Advanced Training:-</span>Experienced in managing chronic conditions such as hypertension, diabetes, and asthma.Also trained in preventive health care and vaccination programs.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Dr. Nair believes in proactive health care, focusing on early detection and prevention through regular checkups,lifestyle modifications and patient education.<br><br>
+        <span class="heading">Research & Publications:-</span>Contributed to studies on the management of chronic diseases in primary care and authored several articles in medical journals on preventive health.<br><br>
+        </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

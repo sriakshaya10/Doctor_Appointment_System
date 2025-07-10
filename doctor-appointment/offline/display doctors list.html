@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Doctors</title>
+    <link rel="stylesheet" href="displayDoc.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your City</h2>
+        <select id="city" onchange="selectCity()">
+            <option value="">--Select City--</option>
+            <option value="Vijayawada">Vijayawada</option>
+            <option value="Nellore">Nellore</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Eluru">Eluru</option>
+            <option value="Visakhapatnam">Visakhapatnam</option>
+        </select>
+         <div id="hospitalSection" style="display:none">
+            <h3>Selected Hospital</h3>
+            <div class="card" onclick="selectHospital()">
+                <img id="hospitalImage" src="" alt="Hospital">
+                <p id="hospitalName"></p>
+				<p id="hospitalDetails"></p>
+            </div>
+        </div>
+        <div id="specializationSection" style="display:none">
+            <h3>Specializations</h3>
+            <div class="grid" id="specializationGrid"></div>
+        </div>
+        <div id="doctorSection" style="display:none">
+            <h3>Available Doctors</h3>
+            <div class="grid" id="doctorGrid"></div>
+        </div>
+    </div>
+	    <script src="doc.js"></script>
+</body>
+</html>

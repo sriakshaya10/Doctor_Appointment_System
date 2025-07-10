@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link rel="stylesheet" href="medicines.css">
+    <script defer src="medicines.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fa-solid fa-briefcase-medical"></i> Buy Medicines</h1>
+    </header>
+    <main>
+        <section class="prescription-form">
+            <h2>Enter Prescription Details</h2>
+            <form id="prescriptionForm">
+                <label for="appointmentID">Appointment Number:</label>
+                <input type="text" id="appointmentID" name="appointmentID" required>
+
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+
+                <label for="doctorName">Doctor Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+
+                <label for="appointmentDate">Appointment Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        
+    </main>
+</body>
+</html>

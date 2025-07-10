@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Lakshmi Iyer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="femalepsychiatry.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Lakshmi Iyer</span><br><br>
+      <span class="heading">Specialization:-</span>Psychiatry<br><br>
+      <span class="heading">Experience:-</span>9+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS, MD (Psychiatry), Kasturba Medical College,Manipal<br><br>
+      <span class="heading">Location:-</span><a href="https://www.collegebatch.com/7391-kasturba-medical-college-contact-number-address-map-manipal" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span><span class="heading">Languages spoken:-</span> English, Telugu, kannada, Hindi</span><br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr.Lakshmi Iyer is a compassionate psychiatrist known for her holistic approach to mental health care.She specializes in treating anxiety,depression,bipolar disorder,and stress-related disorders,using a combination of therapy and medication.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Recognized by the Indian Psychiatric Society for her impactful work in women's mental health and community outreach programs in 2022.<br><br>
+        <span class="heading">Advanced Training:-</span>Specialized in cognitive behavioral therapy (CBT),trauma-informed care,and adolescent mental health.Also trained in handling cases of PTSD and substance use disorders.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Dr. Iyer believes in creating a safe, supportive environment for her patients.She emphasizes personalized care and the importance of mental well-being in achieving overall health.<br><br>
+        <span class="heading">Research & Publications:-</span>Published articles in the Indian Journal of Psychiatry focusing on early intervention strategies in depression and anxiety management in youth and working professionals.<br><br>
+      </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

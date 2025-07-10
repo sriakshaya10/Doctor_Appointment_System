@@ -1,0 +1,23 @@
+ body{
+	        font-family: "Times New Roman";
+            padding: 20px;
+            margin: 50px;
+            background-image: url("https://bytesflow.com/cdn-cgi/image/width=1200,height=475,fit=crop,quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/2018/06/Image-3.png");
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            background-repeat: no-repeat; 
+            color: black;
+			font-weight: bold;
+			text-align:center;}
+        .container { max-width: 800px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px;}
+        .card { cursor: pointer; padding: 10px; background: #eff9f8  ; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+        .card img { width: 150px; height: 100px; object-fit: cover; border-radius: 10px;}
+        .btn { padding: 10px 20px; margin: 10px; cursor: pointer; border: none; background: blue; color: white; border-radius: 5px;}
+        select { padding: 10px; margin: 10px; width: 80%; border-radius: 5px; border: 1px solid #ddd; }
+		.grid > :nth-child(5) {
+				grid-column: 1 / -1;     
+				justify-self: center;     
+				width:200px;     
+				}

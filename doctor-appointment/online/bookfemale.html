@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Slots</title>
+  <style>
+    body {
+      font-family: "Bookman Old Style";
+      background-color: #E6F0FA;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #1A4F7A;
+      margin-top: 30px;
+    }
+    .input-box {
+      margin: 40px auto 20px;
+      width: 50%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .input-box input, .input-box select {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .input-box button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #1A4F7A;
+      color: white;
+      cursor: pointer;
+    }
+    .input-box button:hover {
+      background-color: #144060;
+    }
+    .box {
+      display: none;
+      margin: 30px auto;
+      width: 40%;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .slot-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .slot {
+      background-color: #66B2FF;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .slot:hover {
+      background-color: #1A4F7A;
+    }
+    .selected-slot {
+      background-color: #FF7F50;
+    }
+    .book, .submit {
+      display: none;
+      margin-top: 10px;
+      background-color: #008B8B;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .book:hover, .submit:hover {
+      background-color: #006666;
+    }
+    h2 {
+      color: #1A4F7A;
+      text-decoration: underline dotted;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Appointment Booking</h1>
+
+  <!-- FORM START -->
+  <form action="submit_patients.php" method="POST" onsubmit="return validateForm();">
+    <div class="input-box">
+      <input type="text" name="name" id="name" placeholder="Enter your name" required>
+      <input type="number" name="age" id="age" placeholder="Enter your age" required>
+      <select name="session" id="session" required onchange="showSlots()">
+        <option value="" disabled selected>Select Session</option>
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="night">Night</option>
+      </select>
+    </div>
+
+    <!-- Morning Session -->
+    <div class="box" id="morningBox">
+      <h2>Morning Session</h2>
+      <div class="slot-group">
+        <button type="button" class="slot">8:00AM - 8:30AM</button>
+        <button type="button" class="slot">8:30AM - 9:00AM</button>
+        <button type="button" class="slot">9:00AM - 9:30AM</button>
+        <button type="button" class="slot">9:30AM - 10:00AM</button>
+        <button type="button" class="slot">10:00AM - 10:30AM</button>
+      </div>
+      <button type="button" class="book">Book Now</button>
+    </div>
+
+    <!-- Afternoon Session -->
+    <div class="box" id="afternoonBox">
+      <h2>Afternoon Session</h2>
+      <div class="slot-group">
+        <button type="button" class="slot">12:00PM - 12:30PM</button>
+        <button type="button" class="slot">12:30PM - 1:00PM</button>
+        <button type="button" class="slot">1:00PM - 1:30PM</button>
+        <button type="button" class="slot">1:30PM - 2:00PM</button>
+        <button type="button" class="slot">2:00PM - 2:30PM</button>
+      </div>
+      <button type="button" class="book">Book Now</button>
+    </div>
+
+    <!-- Night Session -->
+    <div class="box" id="nightBox">
+      <h2>Night Session</h2>
+      <div class="slot-group">
+        <button type="button" class="slot">5:00PM - 5:30PM</button>
+        <button type="button" class="slot">5:30PM - 6:00PM</button>
+        <button type="button" class="slot">6:00PM - 6:30PM</button>
+        <button type="button" class="slot">6:30PM - 7:00PM</button>
+        <button type="button" class="slot">7:00PM - 7:30PM</button>
+      </div>
+      <button type="button" class="book">Book Now</button>
+    </div>
+
+    <!-- Hidden Inputs -->
+    <input type="hidden" name="slot" id="slot">
+    <input type="hidden" name="doctor" id="doctor">
+    <input type="hidden" name="department" id="department">
+
+    <!-- Submit Button -->
+    <div id="submitSection" style="margin-top: 30px;">
+      <button class="submit" id="finalSubmit" type="submit">Submit</button>
+    </div>
+  </form>
+  <!-- FORM END -->
+
+  <!-- JavaScript -->
+  <script>
+    function showSlots() {
+      const session = document.getElementById('session').value;
+      if (!session) {
+        alert("Please select a session.");
+        return;
+      }
+      document.querySelectorAll('.box').forEach(box => box.style.display = 'none');
+      document.getElementById(session + 'Box').style.display = 'block';
+    }
+
+    let selectedslot = "";
+    const slots = document.querySelectorAll('.slot');
+    slots.forEach(slot => {
+      slot.addEventListener('click', () => {
+        slots.forEach(s => s.classList.remove('selected-slot'));
+        slot.classList.add('selected-slot');
+        selectedslot = slot.textContent;
+        document.getElementById('slot').value = selectedslot;
+
+        const box = slot.closest('.box');
+        const bookBtn = box.querySelector('.book');
+        bookBtn.style.display = 'inline-block';
+        bookBtn.textContent = 'Book Now - ' + selectedslot;
+        bookBtn.setAttribute('data-time', selectedslot);
+      });
+    });
+
+    const bookBtns = document.querySelectorAll('.book');
+    bookBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const time = btn.getAttribute('data-time');
+        alert('Your slot at ' + time + ' is selected! Click Submit to confirm.');
+        document.querySelector('.submit').style.display = 'inline-block';
+      });
+    });
+
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const age = document.getElementById('age').value.trim();
+      const session = document.getElementById('session').value;
+      const slot = document.getElementById('slot').value;
+
+      const doctor = localStorage.getItem('selectedDoctor');
+      const department = localStorage.getItem('selectedSpecialization');
+
+      if (!name || !age || !session || !slot || !doctor || !department) {
+        alert("Please fill all details and select a slot.");
+        return false;
+      }
+
+      document.getElementById('doctor').value = doctor;
+      document.getElementById('department').value = department;
+
+      return true;
+    }
+  </script>
+</body>
+</html>

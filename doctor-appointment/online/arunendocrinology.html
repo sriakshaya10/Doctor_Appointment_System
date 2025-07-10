@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Arun Prasad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+      body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    } 
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="maleendocrinology.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Arun Prasad</span><br><br>
+      <span class="heading">Specialization:-</span>Endocrinology<br><br>
+      <span class="heading">Experience:-</span>16+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS,MS(Endocrinology),St. John's Medical College,Bangalore<br><br>
+      <span class="heading">Location:-</span><a href="https://www.google.com/maps/place/ST.+JOHN'S+MEDICAL+COLLEGE,+Koramangala,+Bengaluru,+Karnataka+560034/@12.9305832,77.6197122,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae145a73dc7aa1:0x94fe4f1f40e61dac!8m2!3d12.9308591!4d77.619745!16s%2Fg%2F11f62n8fzs?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="https://www.linkedin.com/in/phani-sree-reddy-a6542b2b2/" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span class="heading">Languages spoken:-</span>English, Telugu, kannada,Hindi<br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr.Arun Prasad is a highly experienced endocrinologist specializing in treating hormonal imbalances and metabolic disorders.He is known for his holistic approach to treatment,ensuring personalized care for every patient.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Dr.Arun Prasad has been recognized for excellence in endocrinology and has received multiple awards for his dedication to patient care.<br><br>
+        <span class="heading">Advanced Training:-</span>Trained in advanced diabetes management, thyroid disorders,and metabolic syndrome treatments.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Dr. Prasad believes in a comprehensive and patient-centered approach to care,with a strong emphasis on lifestyle modification and preventive care.<br><br>
+        <span class="heading">Research & Publications:-</span>He has contributed to several key publications in the field of endocrinology,particularly in the areas of diabetes care and thyroid health.<br><br>
+      </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

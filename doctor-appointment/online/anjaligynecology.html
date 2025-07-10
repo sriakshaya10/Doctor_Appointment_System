@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Dr.Anjali Reddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background-color: #E6F0FA;
+    }
+    .box {
+      background-color: white;
+      width:40%;
+      font-family:"Bookman Old Style";
+      box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+      margin:10% auto;
+      overflow:hidden;
+      padding:20px;
+      border-radius:10px;
+      font-size:20px;
+    }
+    img {
+      width:150px;
+      height:150px;
+      border-radius:60px;
+      margin-top:3%;
+      margin-left:2%;
+      float:left;
+    }
+    .info {
+      margin-left:180px;
+    }
+    .extracontent {
+      display: none;
+    }
+    button {
+      margin-top:15px;
+      padding:8px 16px;
+      background-color:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .heading {
+      color:#1A4F7A;
+      font-weight:bold;
+      font-size:19px;
+      font-weight:bold;
+    }
+    .name{
+      margin-left:20%;
+      font-size:30px;
+      font-weight:bold;
+      color:#1A4F7A;
+      text-decoration:underline dotted;
+    } 
+  </style>
+</head>
+<body>
+  <div class="box" id="doctorbox">
+    <img src="femalegynecology.png" alt="img">
+    <div class="info">
+      <span class="name">Dr.Anjali Reddy</span><br><br>
+      <span class="heading">Specialization:-</span>Gynecology<br><br>
+      <span class="heading">Experience:-</span>10+ Years<br><br>
+      <span class="heading">Education:-</span>MBBS,MS(Obstetrics & Gynecology),Osmania Medical College<br><br>
+      <span class="heading">Location:-</span><a href="https://www.waze.com/live-map/directions/in/ts/hyderabad/osmania-medical-college?to=place.ChIJPajI39KZyzsRzT6fwL3zIH4" style="text-decoration:none"  target="_blank">View College Map</a><br><br>
+      <span class="heading">LinkedIn:-</span><a href="https://www.linkedin.com/in/sri-akshaya-kodali-619279323/" style="text-decoration:none" target="_blank">View Account</a><br><br>
+      <span class="heading">Languages spoken:-</span>English,Telugu,Hindi<br><br>
+      <div class="extracontent" id="extracontent">
+        <span class="heading">About:-</span>Dr. Anjali Reddy is a compassionate and experienced gynecologist specializing in women’s health,prenatal care,infertility treatment,and reproductive health management.<br><br>
+        <span class="heading">Awards & Recognitions:-</span>Honored with the “Excellence in Women’s Health” award by the Telangana Health Forum in 2021.<br><br>
+        <span class="heading">Advanced Training:-</span>Trained in laparoscopic gynecological surgery,high-risk pregnancy care,and hormone therapy for menopausal women.<br><br>
+        <span class="heading">Professional Philosophy:-</span>Believes in empowering women with knowledge about their bodies and health. Her approach is patient-centric,open,and respectful of every stage of womanhood.<br><br>
+        <span class="heading">Research & Publications:-</span>Contributed to various journals on maternal health and minimally invasive gynecological procedures.<br><br>
+      </div>
+      <button onclick="readmore()">Read More ▼</button>
+    </div>
+  </div>
+  <script>
+    function readmore() {
+      const extracontent=document.getElementById("extracontent");
+      const button = event.target;
+      if(extracontent.style.display === "none" || extracontent.style.display === ""){
+        extracontent.style.display="block";
+        button.textContent="Read Less ▲";
+      } else {
+        extracontent.style.display = "none";
+        button.textContent="Read More ▼";
+      }
+    }
+  </script>
+</body>
+</html>

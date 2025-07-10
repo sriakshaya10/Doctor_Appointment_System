@@ -1,0 +1,183 @@
+Mehrosh - Mehrosh
+Doctor project - Phani & Lokesh
+DOCTOR APPOINTMENT SYSTEM - Akshaya
+OFFLINE APPOINTMENT - Sumana 
+
+patient table
+
+CREATE TABLE patient (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    phone VARCHAR(20),
+    language VARCHAR(50),
+    password VARCHAR(10) NOT NULL,
+    gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    age INT NOT NULL,
+    blood_group ENUM('A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-') NOT NULL
+);
+
+
+lab bookings (sumana)
+
+CREATE TABLE hospital_labbookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_name VARCHAR(50),
+    test_type VARCHAR(50),
+    hospital VARCHAR(100),
+    date DATE
+);
+
+doctor details
+
+CREATE TABLE doctordetails (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(10) NOT NULL,
+    phone_number VARCHAR(15),
+    language VARCHAR(50),
+    profession VARCHAR(50),
+    qualification varchar(100),
+    experience VARCHAR(50),
+    address varchar(255),
+    mode ENUM('Offline', 'Online') NOT NULL
+);
+
+offline_appointments
+
+CREATE TABLE offline_appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    location VARCHAR(60) NOT NULL,
+    hospital VARCHAR(50) NOT NULL,
+    department VARCHAR(40) NOT NULL,
+    doctor VARCHAR(30) NOT NULL,
+    slot VARCHAR(15) NOT NULL,
+    patient_name VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    appointment_date DATE NOT NULL
+);
+
+booking slots(online appointment)
+
+CREATE TABLE booking_slots (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    p_name VARCHAR(50) NOT NULL,
+    p_age INT NOT NULL,
+    session VARCHAR(50),
+    slot_time TIME NOT NULL,
+    doctor_name VARCHAR(50) NOT NULL,
+    department VARCHAR(30),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+doctor ratings
+
+CREATE TABLE doctor_ratings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_name VARCHAR(50) NOT NULL,
+    rating INT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+    feedback varchar(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+home lab bookings
+
+CREATE TABLE home_lab_bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(50) NOT NULL,
+    contact VARCHAR(15) NOT NULL,
+    testname VARCHAR(40) NOT NULL,
+    testprice DECIMAL(10, 2) NOT NULL,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    address varchar(255) NOT NULL
+);
+
+prescription
+
+create table prescriptions(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    appointmentID VARCHAR(50) NOT NULL,
+    patient_name VARCHAR(100) NOT NULL,
+    doctor_name VARCHAR(100) NOT NULL,
+    appointment_date DATE NOT NULL,
+    medicines TEXT NOT NULL,
+    instructions  varchar(200) not null,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+insert into prescriptions(appointmentID, patient_name, doctor_name, appointment_date, medicines, instructions)
+VALUES
+(1, 'mehrosh', 'Dr.Priya Srinivasan','2025-04-23', 'Tab. Biotin 10 mg','Once daily	30 days	After breakfast'),
+(2, 'mehrosh','Dr.Priya Srinivasan','2025-04-23','Tab. Iron + Folic Acid','Once daily	30 days	Preferably after dinner'),
+(4, 'mehrosh','Dr.Ravi Kumar','2025-04-23','Tab. Vitamin B-Complex','Once daily	30 days	After breakfast'),
+(3, 'phani','Dr.Anjali Reddy','2025-04-23','Tab. Fefol-Z (Iron + Zinc)','Once daily	30 days	Take after lunch'),
+(5, 'sumana','Dr.Karthik Varma','2025-04-23','Tab. Stresnil (B-complex + antioxidants)','Once daily	15 days	Take after breakfast');
+
+
+INSERT INTO doctordetails(name, email, password, phone_number, language, profession, qualification, experience, address, mode) VALUES
+
+('Dr.Sruthi Nair','sruthi.nair12@gmail.com','sruthin@12','6127931921','English,Telugu,Tamil,Hindi','Pediatrics','MBBS,MD(Pediatrics)','12+','Housing Board Colony, Vijayawada, Andhra Pradesh 520012,India','Online'),
+('Dr.vijay Reddy','vijay.reddy13@gmail.com','vijayre@13','7477530658','English,Telugu,Hindi,Kannada','Pediatrics','MBBS.MD(Pediatrics)','13+','3rd Floor Kasturba Marg Road Above Varun Maruti Showroom, Siripuram, Visakhapatnam, Andhra Pradesh 530003, India','Online'),
+('Dr.Anjali Reddy','anjali.reddy10@gmail.com','anjalir@10','7979034463','English,Telugu,Hindi','Gynecology','MBBS,MS(Obstetrics&Gynecology)','10+','Farm Gate, opposite GS Road, Jaya Nagar, Khanapara, Guwahati, Assam 781022, India','Online'),
+('Dr.Ravi Kumar','ravi.kumar11@gmail.com','ravikum@11','6127912524','English,Hindi,Telugu','Gynecology','MBBS,MS(Obstetrics&Gynecology)','11+','53/35, Ramjas Rd, Block 53, Karol Bagh, New Delhi, Delhi 110005, India','Online'),
+('Dr.Divya Kumar','divya.kumar14@gmail.com','divyaku@14','7447043857','English,Telugu,Hindi','Endocrinology','MBBS,MD(Endocrinology)','14+','Matrix Dental and Skin Lounge, 70, Poorvi Marg, oppo Modern School, Vasant Vihar, New Delhi, Delhi 110057, India','Online'),
+('Dr.Arun Prasad','arun.prasad16@gmail.com','arunpra@16','6127926182','English,Telugu,Hindi,Kannada','Endocrinology','MBBS,MS(Endocrinology)','16+','23, Amaravathi Rd, Opposite LIC Office, Naidupet, Guntur, Andhra Pradesh 522007, India','Online'),
+('Dr.Priya Srinivasan','priya.srinivasan15@gmail.com','priyasr@15','7285308293','English,Hindi,Telugu,Tamil','General Health Checkup','MBBS,MD(General Medicine)','15+','Gleneagles Global HospitalsDepartment Of OBG No. 439, Cheran Nagar, Perumbakkam, Chennai, Tamil Nadu 600100, India','Online'),
+('Dr.Rajesh Nair','rajesh.nair18@gmail.com','rajeshn@18','6127921476','English,Telugu,Tamil,Hindi','General Health Checkup','MBBS,MD(General Medicine)','18+','No 10, 1, Radhakrishnan St, Subramania Salai, Fathima Nagar, Valasaravakkam, Chennai, Tamil Nadu 600087, India','Online'),
+('Dr.Lakshmi Iyer','lakshmi.iyer9@gmail.com','lakshmii@9','6210341363','English,Hindi,Telugu,Kannada','Psychiatry','MBBS,MD(Psychiatry)','9+','Ashok Nagar Rd, opp. SHREE MARIYAMMA TEMPLE URWA, Urwa Market, Ashok Nagar, Mangalore, Karnataka 575003, India','Online'),
+('Dr.Karthik Varma','karthik.varma15@gmail.com','karthik@15','6127944111','Kannada,English,Hindi,Telugu','Psychiatry','MBBS,MD(Psychiatry)','15+','Chinmaya Mission Hospital Rd, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038, India','Online');
+
+('Dr. Rajesh Kumar', 'rajesh.kumar18@gmail.com', 'rajeshk@18', '9944366945', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '18+', '7, Megha Apartments, 2nd Cross, Vijayawada, Andhra Pradesh, 520880', 'Offline'),
+('Dr. Sneha Reddy', 'sneha.reddy11@gmail.com', 'snehare@11', '8685009846', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '11+', '102, Lakshmi Residency, Hilltop Street, Vijayawada, Andhra Pradesh, 521904', 'Offline'),
+('Dr. Srinivas Varma', 'srinivas.varma9@gmail.com', 'srinivas@9', '9671029421', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '9+', '130, Green Villas, Lakeview Rd, Vijayawada, Andhra Pradesh, 527129', 'Offline'),
+('Dr. Anusha Reddy', 'anusha.reddy8@gmail.com', 'anushare@8', '8753969680', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '8+', '77, Megha Apartments, 2nd Cross, Vijayawada, Andhra Pradesh, 526194', 'Offline'),
+('Dr. Abhiram Varma', 'abhiram.varma8@gmail.com', 'abhiramv@8', '8817911059', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '8+', '96, Megha Apartments, 1st Main, Vijayawada, Andhra Pradesh, 521434', 'Offline'),
+('Dr. Manju Shree', 'manju.shree7@gmail.com', 'manjushr@7', '9927367110', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '7+', '39, Megha Apartments, 1st Main, Vijayawada, Andhra Pradesh, 524336', 'Offline'),
+('Dr. Chaitanya Kumar', 'chaitanya.kumar20@gmail.com', 'chaitan@20', '7884857411', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '20+', '44, Lakshmi Residency, Hilltop Street, Vijayawada, Andhra Pradesh, 525730', 'Offline'),
+('Dr. Uma Reddy', 'uma.reddy6@gmail.com', 'umareddy@6', '7191645971', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '6+', '3, Megha Apartments, Lakeview Rd, Vijayawada, Andhra Pradesh, 525868', 'Offline'),
+('Dr. Ravi Kiran', 'ravi.kiran7@gmail.com', 'ravikira@7', '7532969822', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '7+', '164, Green Villas, 2nd Cross, Vijayawada, Andhra Pradesh, 527126', 'Offline'),
+('Dr. Tejaswini', 'tejaswini12@gmail.com', 'tejaswi@12', '6345798039', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '12+', '198, Lakshmi Residency, Hilltop Street, Vijayawada, Andhra Pradesh, 525816', 'Offline'),
+('Dr. Bharath Kumar', 'bharath.kumar14@gmail.com', 'bharath@14', '7292306193', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '14+', '152, Megha Apartments, 2nd Cross, Nellore, Andhra Pradesh, 524284', 'Offline'),
+('Dr. Sriya Reddy', 'sriya.reddy13@gmail.com', 'sriyare@13', '7629805152', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '13+', '64, Megha Apartments, 2nd Cross, Nellore, Andhra Pradesh, 527689', 'Offline'),
+('Dr. Jyothish', 'jyothish8@gmail.com', 'jyothish@8', '7237608637', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '8+', '21, Green Villas, 1st Main, Nellore, Andhra Pradesh, 521191', 'Offline'),
+('Dr. Yashmitha', 'yashmitha13@gmail.com', 'yashmit@13', '9122761953', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '13+', '19, Lakshmi Residency, 1st Main, Nellore, Andhra Pradesh, 527179', 'Offline'),
+('Dr. Gunasekar', 'gunasekar7@gmail.com', 'gunasekx@7', '8877141604', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '7+', '50, Megha Apartments, Lakeview Rd, Nellore, Andhra Pradesh, 528295', 'Offline'),
+('Dr. Pavani Naidu', 'pavani.naidu9@gmail.com', 'pavanina@9', '6673022481', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '9+', '42, Sai Towers, 2nd Cross, Nellore, Andhra Pradesh, 525940', 'Offline'),
+('Dr. Anil Kumar', 'anil.kumar11@gmail.com', 'anilkum@11', '8473108197', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '11+', '20, Lakshmi Residency, 2nd Cross, Nellore, Andhra Pradesh, 529114', 'Offline'),
+('Dr. Supraja Varma', 'supraja.varma12@gmail.com', 'supraja@12', '7259967739', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '12+', '69, Megha Apartments, Lakeview Rd, Nellore, Andhra Pradesh, 526638', 'Offline'),
+('Dr. Srinivas', 'srinivas21@gmail.com', 'sriniva@21', '7267400308', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '21+', '159, Green Villas, 1st Main, Nellore, Andhra Pradesh, 522602', 'Offline'),
+('Dr. Anshu Reddy', 'anshu.reddy16@gmail.com', 'anshure@16', '7763314690', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '16+', '99, Lakshmi Residency, Lakeview Rd, Nellore, Andhra Pradesh, 525821', 'Offline'),
+('Dr. Rakesh', 'rakesh11@gmail.com', 'rakeshx@11', '6238866637', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '11+', '156, Green Villas, 2nd Cross, Hyderabad, Andhra Pradesh, 525954', 'Offline'),
+('Dr. Suguna', 'suguna15@gmail.com', 'sugunax@15', '9703960085', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '15+', '110, Green Villas, 1st Main, Hyderabad, Andhra Pradesh, 523468', 'Offline'),
+('Dr. Giri Babu', 'giri.babu10@gmail.com', 'giribab@10', '9010823123', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '10+', '132, Sai Towers, Hilltop Street, Hyderabad, Andhra Pradesh, 528393', 'Offline'),
+('Dr. Mohana', 'mohana14@gmail.com', 'mohanax@14', '6945397342', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '14+', '170, Lakshmi Residency, 1st Main, Hyderabad, Andhra Pradesh, 529517', 'Offline'),
+('Dr. Kamal', 'kamal22@gmail.com', 'kamalxx@22', '9281057971', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '22+', '127, Sai Towers, 2nd Cross, Hyderabad, Andhra Pradesh, 523149', 'Offline'),
+('Dr. Chithra', 'chithra14@gmail.com', 'chithra@14', '9419314924', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '14+', '120, Green Villas, Hilltop Street, Hyderabad, Andhra Pradesh, 521363', 'Offline'),
+('Dr. Raja', 'raja14@gmail.com', 'rajaxxx@14', '9026729483', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '14+', '170, Megha Apartments, 1st Main, Hyderabad, Andhra Pradesh, 523606', 'Offline'),
+('Dr. Vithya', 'vithya22@gmail.com', 'vithyax@22', '7447979322', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '22+', '135, Sai Towers, Lakeview Rd, Hyderabad, Andhra Pradesh, 521890', 'Offline'),
+('Dr. Subramanyam', 'subramanyam14@gmail.com', 'subrama@14', '9887185933', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '14+', '187, Megha Apartments, 1st Main, Hyderabad, Andhra Pradesh, 520302', 'Offline'),
+('Dr. Sujatha', 'sujatha20@gmail.com', 'sujatha@20', '9863141678', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '20+', '120, Megha Apartments, 2nd Cross, Hyderabad, Andhra Pradesh, 521925', 'Offline'),
+('Dr. Chandra Mouli', 'chandra.mouli17@gmail.com', 'chandra@17', '9301480550', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '17+', '164, Megha Apartments, 2nd Cross, Eluru, Andhra Pradesh, 527517', 'Offline'),
+('Dr. Sri Devi', 'sri.devi12@gmail.com', 'sridevi@12', '7396947979', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '12+', '2, Green Villas, Lakeview Rd, Eluru, Andhra Pradesh, 527568', 'Offline'),
+('Dr. Shashank', 'shashank14@gmail.com', 'shashan@14', '8390801078', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '14+', '194, Megha Apartments, 2nd Cross, Eluru, Andhra Pradesh, 525463', 'Offline'),
+('Dr. Rushitha', 'rushitha8@gmail.com', 'rushitha@8', '7386513567', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '8+', '188, Megha Apartments, Lakeview Rd, Eluru, Andhra Pradesh, 526789', 'Offline'),
+('Dr. Rishith Varma', 'rishith.varma9@gmail.com', 'rishithv@9', '8986481307', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '9+', '107, Sai Towers, 2nd Cross, Eluru, Andhra Pradesh, 520301', 'Offline'),
+('Dr. Srinidhi', 'srinidhi22@gmail.com', 'srinidh@22', '8495637719', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '22+', '97, Megha Apartments, Hilltop Street, Eluru, Andhra Pradesh, 523239', 'Offline'),
+('Dr. Bhargav', 'bhargav10@gmail.com', 'bhargav@10', '8712789307', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '10+', '60, Sai Towers, Hilltop Street, Eluru, Andhra Pradesh, 527665', 'Offline'),
+('Dr. Jyothirmayi', 'jyothirmayi13@gmail.com', 'jyothir@13', '6369171523', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '13+', '30, Megha Apartments, 1st Main, Eluru, Andhra Pradesh, 525071', 'Offline'),
+('Dr. Sai Abhinay', 'sai.abhinay15@gmail.com', 'saiabhi@15', '7293929611', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '15+', '39, Megha Apartments, 1st Main, Eluru, Andhra Pradesh, 527162', 'Offline'),
+('Dr. Vyshnavi', 'vyshnavi7@gmail.com', 'vyshnavi@7', '8816254158', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '7+', '176, Megha Apartments, 1st Main, Eluru, Andhra Pradesh, 523499', 'Offline'),
+('Dr. Somesh', 'somesh22@gmail.com', 'someshx@22', '9975500624', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '22+', '134, Sai Towers, Hilltop Street, Visakhapatnam, Andhra Pradesh, 523675', 'Offline'),
+('Dr. Bhargavi', 'bhargavi15@gmail.com', 'bhargav@15', '8788978657', 'English,Telugu,Hindi', 'Gynecology', 'MBBS,MD(Gynecology)', '15+', '34, Green Villas, Hilltop Street, Visakhapatnam, Andhra Pradesh, 523160', 'Offline'),
+('Dr. Surya Prathap', 'surya.prathap9@gmail.com', 'suryapra@9', '6575263227', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '9+', '94, Megha Apartments, Lakeview Rd, Visakhapatnam, Andhra Pradesh, 527269', 'Offline'),
+('Dr. Esha', 'esha20@gmail.com', 'eshaxxx@20', '7419897161', 'English,Telugu,Hindi', 'Pediatrics', 'MBBS,MD(Pediatrics)', '20+', '61, Lakshmi Residency, Hilltop Street, Visakhapatnam, Andhra Pradesh, 521713', 'Offline'),
+('Dr. Sravan Kumar', 'sravan.kumar11@gmail.com', 'sravank@11', '8087152453', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '11+', '107, Sai Towers, 2nd Cross, Visakhapatnam, Andhra Pradesh, 528833', 'Offline'),
+('Dr. Deepika', 'deepika7@gmail.com', 'deepikax@7', '9441897531', 'English,Telugu,Hindi', 'Endocrinology', 'MBBS,MD(Endocrinology)', '7+', '175, Lakshmi Residency, 2nd Cross, Visakhapatnam, Andhra Pradesh, 520914', 'Offline'),
+('Dr. Ram Nandhan', 'ram.nandhan12@gmail.com', 'ramnand@12', '9429553582', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '12+', '170, Lakshmi Residency, Lakeview Rd, Visakhapatnam, Andhra Pradesh, 522995', 'Offline'),
+('Dr. Hema Priya', 'hema.priya19@gmail.com', 'hemapri@19', '8764181261', 'English,Telugu,Hindi', 'General Physician', 'MBBS,MD(General Physician)', '19+', '152, Sai Towers, Hilltop Street, Visakhapatnam, Andhra Pradesh, 527944', 'Offline'),
+('Dr. Rithwik Varma', 'rithwik.varma14@gmail.com', 'rithwik@14', '8373220845', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '14+', '131, Sai Towers, 2nd Cross, Visakhapatnam, Andhra Pradesh, 527224', 'Offline'),
+('Dr. Nithya Reddy', 'nithya.reddy11@gmail.com', 'nithyar@11', '7656751538', 'English,Telugu,Hindi', 'Psychiatry', 'MBBS,MD(Psychiatry)', '11+', '97, Megha Apartments, 1st Main, Visakhapatnam, Andhra Pradesh, 529018', 'Offline');
